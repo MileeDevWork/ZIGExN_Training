@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ẩn control gốc */
+.hidden-control {
+    display: none;
+}
+
+/*toggle là nút bấm */
+.menu-wrapper-toggle, .copyright-wrapper-toggle {
+    cursor: pointer;
+    display: block;
+}
+
+/*icon tam giác */
+.css-triangle {
+    width: 0;
+    height: 0;
+}
+
+/* icon cho header*/
+.css-triangle.down {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #9370DB; 
+}
+
+/*icon cho footer*/
+.css-triangle.up {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #9370DB; 
+}
+
+/* icon hiện khi toggle đóng*/
+.initial-icon, .footer-icon {
+    display: block;
+    margin: 10px auto;
+}
+
+/* header/menu */
+
+.nav-menu {
+    display: none; 
+    position: relative; 
+    margin: 0 auto;
+    width: fit-content; 
+    padding: 10px 20px;
+    background-color: #9370DB; 
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 25px;
+    display: inline-block;
+}
+
+.nav-menu::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #9370DB; 
+}
+
+/*logic cho heasder */
+#menu-toggle:checked ~ .menu-wrapper-toggle .nav-menu {
+    display: block;
+}
+
+#menu-toggle:checked ~ .menu-wrapper-toggle .initial-icon {
+    display: none; 
+}
+
+/* footer*/
+footer {
+    padding: 20px 0;
+}
+
+.footer-toggle-area {
+    display: block;
+    height: 20px;
+}
+
+.copyright-info {
+    display: none;
+    position: relative;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 5px 20px;
+    background-color: #9370DB;
+    color: white;
+    font-size: 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.copyright-info::before {
+    content: '';
+    position: absolute;
+    top: -15px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #9370DB; 
+}
+
+/*logic footer */
+#copyright-toggle:checked ~ .copyright-wrapper-toggle .copyright-info {
+    display: block;
+}
+
+#copyright-toggle:checked ~ .copyright-wrapper-toggle .footer-toggle-area {
+    display: none; 
+}
