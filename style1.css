@@ -1,48 +1,45 @@
+/* HEADER STYLES */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Ẩn control gốc */
 .hidden-control {
     display: none;
 }
 
-/*toggle là nút bấm */
 .menu-wrapper-toggle, .copyright-wrapper-toggle {
     cursor: pointer;
     display: block;
 }
 
-/*icon tam giác */
 .css-triangle {
     width: 0;
     height: 0;
 }
 
-/* icon cho header*/
 .css-triangle.down {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 15px solid #9370DB; 
+    border-top: 15px solid #9975c8; 
 }
 
-/*icon cho footer*/
 .css-triangle.up {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #9370DB; 
+    border-bottom: 15px solid #9975c8; 
 }
 
-/* icon hiện khi toggle đóng*/
 .initial-icon, .footer-icon {
     display: block;
     margin: 10px auto;
 }
-
-/* header/menu */
 
 .nav-menu {
     display: none; 
@@ -50,7 +47,7 @@ body {
     margin: 0 auto;
     width: fit-content; 
     padding: 10px 20px;
-    background-color: #9370DB; 
+    background-color: #9975c8; 
     border-radius: 8px;
     white-space: nowrap;
 }
@@ -76,10 +73,9 @@ body {
     height: 0;
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 20px solid #9370DB; 
+    border-top: 20px solid #9975c8; 
 }
 
-/*logic cho heasder */
 #menu-toggle:checked ~ .menu-wrapper-toggle .nav-menu {
     display: block;
 }
@@ -88,7 +84,7 @@ body {
     display: none; 
 }
 
-/* footer*/
+/* FOOTER STYLES */
 footer {
     padding: 20px 0;
 }
@@ -104,7 +100,7 @@ footer {
     margin: 0 auto;
     width: fit-content;
     padding: 5px 20px;
-    background-color: #9370DB;
+    background-color: #9975c8;
     color: white;
     font-size: 12px;
     border-radius: 8px;
@@ -124,11 +120,154 @@ footer {
     border-bottom: 20px solid #9370DB; 
 }
 
-/*logic footer */
 #copyright-toggle:checked ~ .copyright-wrapper-toggle .copyright-info {
     display: block;
 }
 
 #copyright-toggle:checked ~ .copyright-wrapper-toggle .footer-toggle-area {
     display: none; 
+}
+
+/* BODY/TABS STYLES */
+.tabs-section {
+    width: 90%; 
+    max-width: 900px;
+    margin: 40px auto;
+    position: relative;
+}
+
+.tab-content-wrapper {
+    background-color: #9975c8; 
+    padding: 30px;
+    min-height: 400px;
+    position: relative;
+    z-index: 1; 
+    border-radius: 8px; 
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.tab-content {
+    display: none; 
+    color: white;
+    line-height: 1.6;
+    text-align: center; 
+}
+
+.tab-label {
+    padding: 10px 30px;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    position: absolute; 
+    top: -40px; 
+    z-index: 3; 
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+.avatar-label {
+    left: 0;
+    background-color: #9975c8; 
+}
+
+.profile-label {
+    right: 0;
+    background-color: #9975c8; 
+}
+
+#tab-avatar:checked ~ .tab-content-wrapper .avatar-content {
+    display: block;
+}
+
+#tab-profile:checked ~ .tab-content-wrapper .profile-content {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#tab-avatar:checked ~ .tab-label.avatar-label {
+    background: linear-gradient(90deg, #A052BE, #FF69B4); 
+    color: white;
+}
+
+#tab-profile:checked ~ .tab-label.profile-label {
+    background: linear-gradient(90deg, #A052BE, #FF69B4);
+    color: white;
+}
+
+#tab-avatar:checked ~ .tab-label.profile-label {
+    background-color: #9975c8; 
+    color: white;
+}
+
+#tab-profile:checked ~ .tab-label.avatar-label {
+    background-color: #9975c8; 
+    color: white;
+}
+
+.image-circle-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden; 
+    border-radius: 50%; 
+    margin: 20px auto 40px auto; 
+    border: 8px solid white; 
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.circular-image {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+}
+
+.choose-file-button {
+    padding: 10px 40px;
+    background: linear-gradient(90deg, #8127af, #FF69B4); 
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.text-input {
+    width: 95%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 3px;
+    margin: 20px 0;
+}
+
+.submit-button {
+    display: block;
+    margin: 20px auto 0; 
+    background: linear-gradient(90deg, #8127af, #FF69B4);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.form-group-radio, .form-group-checkbox {
+    margin: 15px 0;
+}
+
+.form-group-radio label, .form-group-checkbox label {
+    margin-right: 20px;
 }

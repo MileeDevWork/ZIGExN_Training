@@ -25,6 +25,56 @@
 
         </label>
     </header>
+    <main class="tabs-section">
+
+        <input type="radio" id="tab-avatar" name="tab-group" checked class="hidden-control">
+        <label for="tab-avatar" class="tab-label avatar-label">AVATAR</label>
+
+        <input type="radio" id="tab-profile" name="tab-group" class="hidden-control">
+        <label for="tab-profile" class="tab-label profile-label">PROFILE</label>
+
+        <div class="tab-content-wrapper">
+            <div class="tab-content avatar-content">
+                <p style="text-align: justify">There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form. By injected humour, or randomised words which don't look even slightly
+                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                    anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
+                    tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+                    It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,
+                    to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free
+                    from repetition, injected humour, or non-characteristic words etc.</p>
+
+                <div class="form-group">
+                    <label>Choose a car:</label>
+                    <select>
+                        <option>Valve</option>
+                    </select>
+                </div>
+
+                <div class="form-group-radio">
+                    <label><input type="radio" name="tech" checked> HTML</label>
+                    <label><input type="radio" name="tech"> CSS</label>
+                    <label><input type="radio" name="tech"> JavaScript</label>
+                </div>
+
+                <div class="form-group-checkbox">
+                    <label><input type="checkbox"> I have a bike</label>
+                    <label><input type="checkbox"> I have a car</label>
+                    <label><input type="checkbox"> I have a boat</label>
+                </div>
+
+                <input type="text" class="text-input" placeholder="">
+                <button class="submit-button">SUBMIT</button>
+            </div>
+
+            <div class="tab-content profile-content">
+                <div class="image-circle-container">
+                    <img src="ava.jpg" alt="Profile Picture" class="circular-image">
+                </div>
+                <button class="choose-file-button">CHOOSE FILE</button>
+            </div>
+        </div>
+    </main>
     <footer>
         <input type="checkbox" id="copyright-toggle" class="hidden-control">
 
